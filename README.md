@@ -1,117 +1,197 @@
-# vikas-creative-studio
-"A professional website for providing YouTube Automation, Video Editing, and related services. Designed to offer faceless video creation, scriptwriting, voiceovers, and more to help YouTubers grow their channels. The website is built with React, Tailwind CSS, and deployable via Vercel."
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import { CheckCircle, Youtube, Video, Mic, Pencil } from "lucide-react";
-
-export default function HomePage() {
-  return (
-    <div className="p-4 md:p-10 bg-[#0b0f1a] text-white min-h-screen font-sans">
-      <header className="text-center mb-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-cyan-400 mb-4">
-          Vikas Creative Studio
-        </h1>
-        <p className="text-lg md:text-xl text-gray-300">
-          YouTube Automation & Video Editing Services
-        </p>
-        <Button className="mt-6 text-lg px-6 py-4 rounded-2xl shadow-md bg-cyan-500 hover:bg-cyan-400">
-          Get a Free Demo
-        </Button>
-      </header>
-
-      <section className="grid md:grid-cols-3 gap-6 mb-16">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            className="bg-[#121829] p-6 rounded-2xl shadow-md border border-cyan-800"
-          >
-            <div className="flex items-center mb-4 text-cyan-400">
-              {service.icon}
-              <h3 className="text-xl font-semibold ml-3">{service.title}</h3>
-            </div>
-            <p className="text-gray-300 mb-4">{service.description}</p>
-            <Button className="bg-cyan-600 hover:bg-cyan-500 w-full">Start Now</Button>
-          </motion.div>
-        ))}
-      </section>
-
-      <section className="bg-[#10141f] p-6 md:p-10 rounded-2xl shadow-md">
-        <h2 className="text-3xl text-center font-bold text-cyan-300 mb-6">Our Packages</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {packages.map((pkg, index) => (
-            <Card key={index} className="bg-[#161b28] border border-cyan-800">
-              <CardContent className="p-6 text-white">
-                <h3 className="text-2xl font-semibold mb-2 text-cyan-400">{pkg.name}</h3>
-                <p className="text-xl mb-4">₹{pkg.price}</p>
-                <ul className="mb-4 space-y-2">
-                  {pkg.features.map((f, idx) => (
-                    <li key={idx} className="flex items-center text-gray-300">
-                      <CheckCircle className="w-4 h-4 mr-2 text-green-400" /> {f}
-                    </li>
-                  ))}
-                </ul>
-                <Button className="bg-cyan-600 hover:bg-cyan-500 w-full">Choose Plan</Button>
-              </CardContent>
-            </Card>
-          ))}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Solutions Hub | Professional Dropservicing</title>
+    <meta name="description" content="Premium digital services including video editing, web development, SEO, and YouTube automation. Transform your digital presence today.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1 class="logo">DigitalSolutionsHub</h1>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </section>
-    </div>
-  );
-}
+    </nav>
 
-const services = [
-  {
-    title: "Faceless Video Creation",
-    description: "AI scriptwriting, voiceover, and full video automation.",
-    icon: <Video className="w-6 h-6" />,
-  },
-  {
-    title: "YouTube Channel Setup",
-    description: "SEO-optimized branding, automation setup, and monetization help.",
-    icon: <Youtube className="w-6 h-6" />,
-  },
-  {
-    title: "Podcast & Voiceover",
-    description: "Professional podcast editing and AI/human voiceovers.",
-    icon: <Mic className="w-6 h-6" />,
-  },
-  {
-    title: "Script Writing",
-    description: "Engaging scripts for YouTube, shorts, and faceless content.",
-    icon: <Pencil className="w-6 h-6" />,
-  },
-];
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h2>Premium Digital Solutions for Modern Businesses</h2>
+            <p>Transform your digital presence with expert services delivered on time, every time</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </header>
 
-const packages = [
-  {
-    name: "Starter Package",
-    price: "4999",
-    features: [
-      "4 Faceless Videos (5 min each)",
-      "AI Script + Voiceover",
-      "Stock Footage + Thumbnail"
-    ]
-  },
-  {
-    name: "Pro Package",
-    price: "9999",
-    features: [
-      "8 Videos",
-      "Human-Touch Scripts",
-      "Editing + SEO + Upload"
-    ]
-  },
-  {
-    name: "Ultimate Package",
-    price: "19999",
-    features: [
-      "15+ Videos",
-      "Human Voiceover",
-      "Full Channel Management"
-    ]
-  }
-];
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h3>Our Expertise</h3>
+            <div class="services-grid">
+                <!-- Service items will be added dynamically by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h3>Recent Projects</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/800x600?video-editing" alt="Video Editing Project">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/800x600?seo" alt="SEO Project">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/800x600?website" alt="Web Design Project">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3>Start Your Project</h3>
+            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="service" required>
+                    <option value="">Select Service</option>
+                    <option>Video Editing</option>
+                    <option>Content Writing</option>
+                    <option>Web Development</option>
+                    <option>SEO Services</option>
+                    <option>Digital Marketing</option>
+                    <option>Resume Writing</option>
+                    <option>Voiceover Services</option>
+                    <option>YouTube Automation</option>
+                </select>
+                <textarea name="message" placeholder="Project Details" required></textarea>
+                <button type="submit">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2023 DigitalSolutionsHub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Solutions Hub | Professional Dropservicing</title>
+    <meta name="description" content="Premium digital services including video editing, web development, SEO, and YouTube automation. Transform your digital presence today.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1 class="logo">DigitalSolutionsHub</h1>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h2>Premium Digital Solutions for Modern Businesses</h2>
+            <p>Transform your digital presence with expert services delivered on time, every time</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h3>Our Expertise</h3>
+            <div class="services-grid">
+                <!-- Service items will be added dynamically by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h3>Recent Projects</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/800x600?video-editing" alt="Video Editing Project">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/800x600?seo" alt="SEO Project">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://source.unsplash.com/random/800x600?website" alt="Web Design Project">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3>Start Your Project</h3>
+            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="service" required>
+                    <option value="">Select Service</option>
+                    <option>Video Editing</option>
+                    <option>Content Writing</option>
+                    <option>Web Development</option>
+                    <option>SEO Services</option>
+                    <option>Digital Marketing</option>
+                    <option>Resume Writing</option>
+                    <option>Voiceover Services</option>
+                    <option>YouTube Automation</option>
+                </select>
+                <textarea name="message" placeholder="Project Details" required></textarea>
+                <button type="submit">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2023 DigitalSolutionsHub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
